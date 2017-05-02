@@ -230,6 +230,7 @@ abstract public class MobiComConversationFragment extends Fragment implements Vi
         final View list = inflater.inflate(R.layout.mobicom_message_list, container, false);
         date = Calendar.getInstance(TimeZone.getTimeZone("UTC")).getTime();
         listView = (ConversationListView) list.findViewById(R.id.messageList);
+        listView.setBackgroundResource(ApplozicSetting.getInstance(getContext()).getChatBackgroundColorOrDrawableResource());
         listView.setScrollToBottomOnSizeChange(Boolean.TRUE);
         ((ConversationActivity) getActivity()).setChildFragmentLayoutBGToTransparent();
         listView.setDivider(null);
